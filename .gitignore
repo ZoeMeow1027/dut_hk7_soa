@@ -1,0 +1,7 @@
+[VS IDE and VS Code files]
+*/.vs/*
+*/.vscode/*
+
+[Project temporary files]
+*/bin/*
+*/obj/*
