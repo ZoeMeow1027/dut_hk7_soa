@@ -230,10 +230,11 @@ namespace MVC_CSharp.Services
 
 <img src="media/Screenshot_20221013_060943.png" alt="drawing" width="1200"/>
 
-- Tại thư mục Project mở file Program.cs để thêm dòng này để Inject (để hiểu hơn về cái này, xem [tại đây](https://tedu.com.vn/lap-trinh-aspnet-core/vong-doi-cua-dependency-injection-transient-singleton-va-scoped-257.html)):
+- Tại thư mục Project mở file Program.cs để thêm dòng này để Inject (lưu ý phải add trước dòng `var app = builder.Build();`):
 ```csharp
 builder.Services.AddTransient<IProductService, ProductService>();
 ```
+- Để hiểu hơn về builder.Services.AddTransient, xem [tại đây](https://tedu.com.vn/lap-trinh-aspnet-core/vong-doi-cua-dependency-injection-transient-singleton-va-scoped-257.html).
 
 ### Tạo DataContext
 - Tại thư mục Project -> Model, tạo một file có tên DataContext.cs, sau khi tạo sẽ như thế này:
