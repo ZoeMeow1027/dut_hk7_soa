@@ -133,6 +133,8 @@ builder.Services.AddDbContext<DataContext>(
 );
 ```
 
+(lưu ý nếu báo lỗi do thiếu DataContext, hãy thêm sau khi làm xong DataContext [ở đây](#tao-datacontext))
+
 - Chạy project để xem thành quả (vd: https://localhost:7006/). Chi tiết về chạy project xem [tại đây](#launch-project).
 
 ## Tạo model
