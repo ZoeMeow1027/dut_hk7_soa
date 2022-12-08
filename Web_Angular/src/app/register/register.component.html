@@ -1,0 +1,104 @@
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                        <form #registerForm>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="username" name="username" class="form-control"
+                                            [(ngModel)]="registerUser.username" required #username="ngModel" maxlength="32" />
+                                        <label class="form-label" for="username">Username</label>
+                                        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+                                            <span *ngIf="username.errors?.['required']">Username is required</span>
+                                            <span *ngIf="username.errors?.['maxlength']">Username max length must not greater than 32 characters.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="password" id="password" name="password" class="form-control"
+                                            [(ngModel)]="registerUser.password" required #password="ngModel" minlength="8" maxlength="32" />
+                                        <label class="form-label" for="password">Password</label>
+                                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                                            <span *ngIf="password.errors?.['required']">Password is required</span>
+                                            <span *ngIf="password.errors?.['minlength']">Password max length must be at least 8 characters.</span>
+                                            <span *ngIf="password.errors?.['maxlength']">Password max length must not greater than 32 characters.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="text" class="form-control" id="knownAs" name="knownAs"
+                                            [(ngModel)]="registerUser.knownAs" required />
+                                        <label for="knownAs" class="form-label">Known As</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <select class="select form-control" id="gender" name="gender"
+                                        [(ngModel)]="registerUser.gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                    <label class="form-label select-label">Gender</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <input type="email" id="email" name="email" class="form-control"
+                                            [(ngModel)]="registerUser.email" required />
+                                        <label class="form-label" for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth"
+                                            [(ngModel)]="registerUser.dateOfBirth" required />
+                                        <label for="dateOfBirth" class="form-label">Birthday</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <input type="text" id="city" name="city" class="form-control"
+                                            [(ngModel)]="registerUser.city" required />
+                                        <label class="form-label" for="city">City</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline w-100">
+                                        <input type="text" class="form-control" id="avatar" name="avatar"
+                                            [(ngModel)]="registerUser.avatar" required />
+                                        <label for="avatar" class="form-label">Avatar</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <textarea class="form-control" name="introduction" id="introduction" rows="3"
+                                        [(ngModel)]="registerUser.introduction" required ></textarea>
+                                    <label for="introduction" class="form-label">Introduction
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary btn-lg" type="submit" value="Submit"
+                                    (click)="register()" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

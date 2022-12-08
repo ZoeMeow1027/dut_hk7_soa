@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem" *ngIf="member">
+    <img
+      src="{{ member.avatar }}"
+      class="card-img-top"
+      alt="{{ member.knownAs }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ member.knownAs }}</h5>
+      <h6 class="card-subtitle">
+        {{ member.city }} - {{ member.age }}- {{ member.gender }}
+      </h6>
+      <p class="card-text">{{ member.introduction }}</p>
+      <a routerLink="/members/{{ member.username }}" class="btn btn-primary">
+        Member Details
+      </a>
+    </div>
+  </div>
+  
